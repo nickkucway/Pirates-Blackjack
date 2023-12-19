@@ -23,6 +23,7 @@ let playerTotal = 0
 let compTotal = 0
 
 
+
 function play(event){
     console.clear()
     // computer recieves 1 Number
@@ -39,47 +40,47 @@ function play(event){
     playerTotal = playerNumOne + playerNumTwo
     console.log(`Player total number : ${playerTotal}`)
     // player has choice to hit or stand
-    
-    hitBtn.addEventListener('click', ()=> {
-        let newPlayerNum = Math.floor(Math.random() * 10) +1
-        console.log(`you drew a ${newPlayerNum}`)
-        playerTotal = playerTotal + newPlayerNum
-        console.log(`your total is now ${playerTotal}`)
-        // bust on hit over 20
-        if (playerTotal >= 21){
-            console.log('Computer Wins')
-        return
-        }
+}
+hitBtn.addEventListener('click', ()=> {
+    let newPlayerNum = 0
+    newPlayerNum = Math.floor(Math.random() * 10) +1
+    console.log(`you drew a ${newPlayerNum}`)
+    playerTotal = playerTotal + newPlayerNum
+    console.log(`your total is now ${playerTotal}`)
+    // bust on hit over 20
+    if (playerTotal >= 21){
+        console.log('Computer Wins')
     }
-    )
-    standBtn.addEventListener('click', ()=> {
-        // on stand computer recieves second number
-        compNumTwo = Math.floor(Math.random() * 10) +1
-        compTotal = compNumOne + compNumTwo
-        console.log(`Computers second number : ${compNumTwo}`)
-        console.log(`Computers total number : ${compTotal}`)
-        // if number < 15, hit
-        while(compTotal<=15){
-            let newCompNum = Math.floor(Math.random() * 10) +1
-            compTotal = compTotal + newCompNum
-            console.log(`Computer drew a : ${newCompNum}`)
-            console.log(`Computers total number : ${compTotal}`)  
-        }
-        // win or lose or computer bust 
-        if (compTotal >= 21){
-            console.log('Player Wins')
-        }
-        else if (playerTotal === compTotal){
-            console.log('TIE')
-        }
-        else if(playerTotal < compTotal){
-            console.log('Computer Wins')
-        } else{
-            console.log('Player Wins')
-        }
-        }
+}
+)
+standBtn.addEventListener('click', ()=> {
+    // on stand computer recieves second number
+    compNumTwo = Math.floor(Math.random() * 10) +1
+    compTotal = compNumOne + compNumTwo
+    console.log(`Computers second number : ${compNumTwo}`)
+    console.log(`Computers total number : ${compTotal}`)
+    // if number < 15, hit
+    while(compTotal<=15){
+        let newCompNum = Math.floor(Math.random() * 10) +1
+        compTotal = compTotal + newCompNum
+        console.log(`Computer drew a : ${newCompNum}`)
+        console.log(`Computers total number : ${compTotal}`)  
+    }
+    // win or lose or computer bust 
+    if (compTotal >= 21){
+        console.log('Player Wins')
+    }
+    else if (playerTotal === compTotal){
+        console.log('TIE')
+    }
+    else if(playerTotal < compTotal){
+        console.log('Computer Wins')
+    } else{
+        console.log('Player Wins')
+    }
+    }
     )  
     // update win logs
-}
+
 
 playBtn.addEventListener('click', play)
