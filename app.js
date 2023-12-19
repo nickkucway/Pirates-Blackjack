@@ -41,7 +41,8 @@ function play(event){
     console.log(`Player total number : ${playerTotal}`)
     // player has choice to hit or stand
 }
-hitBtn.addEventListener('click', ()=> {
+
+function hit(event) {
     let newPlayerNum = 0
     newPlayerNum = Math.floor(Math.random() * 10) +1
     console.log(`you drew a ${newPlayerNum}`)
@@ -52,8 +53,8 @@ hitBtn.addEventListener('click', ()=> {
         console.log('Computer Wins')
     }
 }
-)
-standBtn.addEventListener('click', ()=> {
+
+function stand(event) {
     // on stand computer recieves second number
     compNumTwo = Math.floor(Math.random() * 10) +1
     compTotal = compNumOne + compNumTwo
@@ -79,8 +80,10 @@ standBtn.addEventListener('click', ()=> {
         console.log('Player Wins')
     }
     }
-    )  
+     
     // update win logs
 
 
 playBtn.addEventListener('click', play)
+standBtn.addEventListener('click', stand)
+hitBtn.addEventListener('click', hit)
