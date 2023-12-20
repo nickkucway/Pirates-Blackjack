@@ -79,7 +79,6 @@ function clearCompNewNum(){
 }
 
 function play(event){
-    console.clear()
     clearPlayerNewNum()
     clearCompNewNum()
     showHitStand()
@@ -95,7 +94,6 @@ function play(event){
     playerCardTwo.innerText = playerNumTwo
     // players 2 numbers added
     playerTotal = playerNumOne + playerNumTwo
-    console.log(`Player total number : ${playerTotal}`)
     // player has choice to hit or stand
     updateTotals()
 }
@@ -103,7 +101,6 @@ function play(event){
 function hit(event) {  
     newPlayerNum = Math.floor(Math.random() * 10) +1
     playerTotal = playerTotal + newPlayerNum
-    console.log(`your total is now ${playerTotal}`)
     showPlayerNewNum()
     updateTotals()
     // bust on hit over 20
@@ -120,15 +117,11 @@ function stand(event) {
     compNumTwo = Math.floor(Math.random() * 10) +1
     compCardTwo.innerText = compNumTwo
     compTotal = compNumOne + compNumTwo
-    console.log(`Computers second number : ${compNumTwo}`)
-    console.log(`Computers total number : ${compTotal}`)
     // if number < 15, hit
     while(compTotal<=15){
         newCompNum = Math.floor(Math.random() * 10) +1
         compTotal = compTotal + newCompNum
-        console.log(`Computer drew a : ${newCompNum}`)
         showCompNewNum()
-        console.log(`Computers total number : ${compTotal}`)  
     }
     // win or lose or computer bust 
     if (compTotal >= 21){
