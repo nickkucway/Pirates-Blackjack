@@ -13,11 +13,13 @@ const losses = $('#losses')
 const playBtn = $('#play')
 const hitBtn = $('#hit')
 const standBtn = $('#stand')
-const resMsg = $('#result-messgae')
+const resMsg = $('#result-message')
 const playerCardOne = $('#playerCardOne')
 const playerCardTwo = $('#playerCardTwo')
 const compCardOne = $('#compCardOne')
 const compCardTwo = $('#compCardTwo')
+const playBtnBlock = $('#play-button')
+const hitStandBtnBlock = $('#hit-stand-buttons')
 
 
 let compNumOne = 0
@@ -32,9 +34,20 @@ function updateScoreboard(){
     ties.children[1].innerText = stats.ties
     losses.children[1].innerText = stats.losses
 }
+function showPlay(){
+    hitStandBtnBlock.style.display = 'none'
+    playBtnBlock.style.display = 'block'
+}
+function showHitStand(){
+    hitStandBtnBlock.style.display = 'block'
+    playBtnBlock.style.display = 'none'
+}
+
 
 function play(event){
     console.clear()
+    showHitStand()
+    resMsg.children[0].innerText = `Let's Play A Game...`
     // computer recieves 1 Number
     compNumOne = Math.floor(Math.random() * 10) +1
     compCardOne.children[0].innerText = compNumOne
@@ -58,8 +71,9 @@ function hit(event) {
     // bust on hit over 20
     if (playerTotal >= 21){
         stats.losses++
-        console.log('Computer Wins')
+        resMsg.children[0].innerText = 'You Lose!'
         updateScoreboard()
+        showPlay()
     }
 }
 
@@ -79,23 +93,24 @@ function stand(event) {
     // win or lose or computer bust 
     if (compTotal >= 21){
         stats.wins++
-        console.log('Player Wins')
+        resMsg.children[0].innerText = 'You Win!'
     }
     else if (playerTotal === compTotal){
         stats.ties++
-        console.log('TIE')
+        resMsg.children[0].innerText = 'Tie Game!'
     }
     else if(playerTotal < compTotal){
         stats.losses++
-        console.log('Computer Wins')
+        resMsg.children[0].innerText = 'You Lose!'
     } else{
         stats.wins++
-        console.log('Player Wins')
+        resMsg.children[0].innerText = 'You Win!'
     }
+    // update win logs
     updateScoreboard()
+    showPlay()
     }
      
-    // update win logs
 
 
 playBtn.addEventListener('click', play)

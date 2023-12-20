@@ -6,3 +6,10 @@ li{
     padding: 0px 25px;
     list-style-type: none;
 }
+
+#hit-stand-buttons {
+    display: none;
+}
+#play-button{
+    display: block;
+}
