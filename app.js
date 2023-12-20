@@ -22,7 +22,8 @@ const playBtnBlock = $('#play-button')
 const hitStandBtnBlock = $('#hit-stand-buttons')
 const extraPlayerNumbers = $('#extra-player-numbers')
 const extraCompNumbers = $('#extra-computer-numbers')
-
+const playerTotalNum = $('#player-total')
+const compTotalNum = $('#computer-total')
 
 let compNumOne = 0
 let compNumTwo = 0
@@ -32,6 +33,11 @@ let playerTotal = 0
 let compTotal = 0
 let newPlayerNum = 0
 let newCompNum = 0
+
+function updateTotals(){
+    playerTotalNum.children[1].innerText = playerTotal
+    compTotalNum.children[1].innerText = compTotal
+}
 
 function updateScoreboard(){
     wins.children[1].innerText = stats.wins
@@ -81,6 +87,7 @@ function play(event){
     // computer recieves 1 Number
     compNumOne = Math.floor(Math.random() * 10) +1
     compCardOne.innerText = compNumOne
+    compTotal = compNumOne
     // player recieves 2 numbers
     playerNumOne = Math.floor(Math.random() * 10) +1
     playerCardOne.innerText = playerNumOne
@@ -90,6 +97,7 @@ function play(event){
     playerTotal = playerNumOne + playerNumTwo
     console.log(`Player total number : ${playerTotal}`)
     // player has choice to hit or stand
+    updateTotals()
 }
 
 function hit(event) {  
@@ -97,6 +105,7 @@ function hit(event) {
     playerTotal = playerTotal + newPlayerNum
     console.log(`your total is now ${playerTotal}`)
     showPlayerNewNum()
+    updateTotals()
     // bust on hit over 20
     if (playerTotal >= 21){
         stats.losses++
@@ -140,6 +149,7 @@ function stand(event) {
     // update win logs
     updateScoreboard()
     showPlay()
+    updateTotals()
     }   
 
 playBtn.addEventListener('click', play)
