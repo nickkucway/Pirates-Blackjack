@@ -3,6 +3,12 @@
     background-color: black;
     color: white;
     text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    font-size: 18px;
 }
 
 img{
@@ -21,9 +27,7 @@ li{
     margin: 0px auto;
     border: 3px solid white;
     border-radius: 25px;
-
 }
-
 
 #hit-stand-buttons {
     display: none;
@@ -51,4 +55,41 @@ button{
 #scoreboard>ul>li>h1,#scoreboard>ul>li>h4{
     background-color: white;
     color:black
+}
+#open-rules{
+    position: absolute;
+    left: 0px;
+    margin: 10px;
+    background-color: white;
+    color: black;
+}
+#close-rules{
+    margin: 10px;
+    background-color: white;
+    color: black;
+}
+#modal {
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	overflow: auto;
+    display: none;
+}
+#rules{
+    background-image: url("./images/scroll.png");
+    background-color: rgba(0,0,0,0.0);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 90%;
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

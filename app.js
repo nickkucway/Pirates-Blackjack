@@ -24,6 +24,9 @@ const extraPlayerNumbers = $('#extra-player-numbers')
 const extraCompNumbers = $('#extra-computer-numbers')
 const playerTotalNum = $('#player-total')
 const compTotalNum = $('#computer-total')
+const openRules = $('#open-rules')
+const modal = $('#modal')
+const closeRules = $('#close-rules')
 
 let compNumOne = 0
 let compNumTwo = 0
@@ -142,7 +145,19 @@ function stand(event) {
     showPlay()
     updateTotals()
     }   
+const openModal = () => {
+  modal.style.display = 'block';
+}
+const closeModal = () => {
+    modal.style.display = 'none'
+}
+
+
 
 playBtn.addEventListener('click', play)
 standBtn.addEventListener('click', stand)
 hitBtn.addEventListener('click', hit)
+
+openRules.addEventListener('click', openModal)
+
+closeRules.addEventListener('click', closeModal)
