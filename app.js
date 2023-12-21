@@ -87,11 +87,11 @@ function play(event){
     showHitStand()
     resMsg.children[0].innerText = `Let's Play A Game...`
     // computer recieves 1 Number
-    compNumOne = Math.floor(Math.random() * 10) +1
+    compNumOne = Math.floor(Math.random() * 10) +2
     compCardOne.innerText = compNumOne
     compTotal = compNumOne
     // player recieves 2 numbers
-    playerNumOne = Math.floor(Math.random() * 10) +1
+    playerNumOne = Math.floor(Math.random() * 10) +2
     playerCardOne.innerText = playerNumOne
     playerNumTwo = Math.floor(Math.random() * 10) +1
     playerCardTwo.innerText = playerNumTwo
