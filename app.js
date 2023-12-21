@@ -127,12 +127,10 @@ function stand(event) {
     if (compTotal >= 21){
         stats.wins++
         resMsg.children[0].innerText = 'You Win!'
-    }
-    else if (playerTotal === compTotal){
+    } else if (playerTotal === compTotal){
         stats.ties++
         resMsg.children[0].innerText = 'Tie Game!'
-    }
-    else if(playerTotal < compTotal){
+    } else if(playerTotal < compTotal){
         stats.losses++
         resMsg.children[0].innerText = 'You Lose!'
     } else{

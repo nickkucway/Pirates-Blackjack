@@ -1,15 +1,54 @@
+*{
+    font-family: 'VT323', monospace;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
 
+img{
+    width: 100%;
+}
 ul{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
 }
 li{
-    padding: 0px 25px;
+    font-size: 24px;
+    padding: 0px 10px;
     list-style-type: none;
+    margin: 0px auto;
+    border: 3px solid white;
+    border-radius: 25px;
+
 }
+
 
 #hit-stand-buttons {
     display: none;
 }
 #play-button{
     display: block;
+}
+
+button{
+    padding: 10px 24px;
+    font-size: 24px;
+    background-color: green;
+    border: none;
+}
+#scoreboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+}
+#scoreboard>ul>li{
+    margin: 10px;
+    background-color: white;
+}
+#scoreboard>ul>li>h1,#scoreboard>ul>li>h4{
+    background-color: white;
+    color:black
 }
