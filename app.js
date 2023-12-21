@@ -106,8 +106,8 @@ function hit(event) {
     playerTotal = playerTotal + newPlayerNum
     showPlayerNewNum()
     updateTotals()
-    // bust on hit over 20
-    if (playerTotal >= 21){
+    // bust on hit over 21
+    if (playerTotal >= 22){
         stats.losses++
         resMsg.children[0].innerText = 'You Lose!'
         updateScoreboard()
@@ -120,14 +120,14 @@ function stand(event) {
     compNumTwo = Math.floor(Math.random() * 10) +1
     compCardTwo.innerText = compNumTwo
     compTotal = compNumOne + compNumTwo
-    // if number < 15, hit
-    while(compTotal<=15){
+    // if number < 16, hit
+    while(compTotal<=16){
         newCompNum = Math.floor(Math.random() * 10) +1
         compTotal = compTotal + newCompNum
         showCompNewNum()
     }
     // win or lose or computer bust 
-    if (compTotal >= 21){
+    if (compTotal >= 22){
         stats.wins++
         resMsg.children[0].innerText = 'You Win!'
     } else if (playerTotal === compTotal){
@@ -151,8 +151,6 @@ const openModal = () => {
 const closeModal = () => {
     modal.style.display = 'none'
 }
-
-
 
 playBtn.addEventListener('click', play)
 standBtn.addEventListener('click', stand)
