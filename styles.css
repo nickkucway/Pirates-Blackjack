@@ -93,6 +93,12 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 50px;
+}
+#rules>p{
+    font-size: 24px;
+    width: 80%;
+    text-align: left;
 }
 
 #playerCardOne, #playerCardTwo, #extra-player-numbers>li, #compCardOne, #compCardTwo, #extra-computer-numbers>li{
@@ -124,6 +130,11 @@ h3{
     }
     #open-rules{
         opacity: 30%;
+    }
+    #rules>p{
+        font-size: 18px;
+        width: 80%;
+        text-align: left;
     }
 
   }
