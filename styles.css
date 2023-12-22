@@ -37,6 +37,7 @@ li{
 }
 
 button{
+    width: 15vh;
     padding: 10px 24px;
     font-size: 24px;
     background-color: green;
@@ -100,3 +101,25 @@ button{
     padding: 24px;
     border-radius: 5px;
 }
+#player-total, #computer-total{
+    padding: 10px;
+}
+
+#computer, #player, #result-message, #play-button, #hit-stand-buttons, #result-message, h3{
+    margin: 16px auto;
+}
+h3{
+    font-size: 24px;
+}
+#result-message{
+    font-size: 36px;
+}
+
+@media (max-width: 500px) {
+    #rules{
+        width: 90%;
+    }
+    #open-rules{
+        bottom: 0px;
+    }
+  }

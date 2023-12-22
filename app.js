@@ -27,6 +27,7 @@ const compTotalNum = $('#computer-total')
 const openRules = $('#open-rules')
 const modal = $('#modal')
 const closeRules = $('#close-rules')
+const headerImage = $('#header-image')
 
 let compNumOne = 0
 let compNumTwo = 0
@@ -85,6 +86,7 @@ function play(event){
     clearPlayerNewNum()
     clearCompNewNum()
     showHitStand()
+    headerImage.src = "./images/piratesblackjack.png"
     resMsg.children[0].innerText = `Let's Play A Game...`
     // computer recieves 1 Number
     compNumOne = Math.floor(Math.random() * 10) +2
@@ -112,6 +114,7 @@ function hit(event) {
         resMsg.children[0].innerText = 'You Lose!'
         updateScoreboard()
         showPlay()
+        headerImage.src = "./images/piratesblackjacklose.png"
     }
 }
 
@@ -130,15 +133,19 @@ function stand(event) {
     if (compTotal >= 22){
         stats.wins++
         resMsg.children[0].innerText = 'You Win!'
+        headerImage.src = "./images/piratesblackjackwin.png"
     } else if (playerTotal === compTotal){
         stats.ties++
         resMsg.children[0].innerText = 'Tie Game!'
+        headerImage.src = "./images/piratesblackjacktie.png"
     } else if(playerTotal < compTotal){
         stats.losses++
         resMsg.children[0].innerText = 'You Lose!'
+        headerImage.src = "./images/piratesblackjacklose.png"
     } else{
         stats.wins++
         resMsg.children[0].innerText = 'You Win!'
+        headerImage.src = "./images/piratesblackjackwin.png"
     }
     // update win logs
     updateScoreboard()
