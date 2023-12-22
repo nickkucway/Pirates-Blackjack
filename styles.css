@@ -119,7 +119,11 @@ h3{
     #rules{
         width: 90%;
     }
-    #open-rules{
-        bottom: 0px;
+    #result-message{
+        font-size: 24px;
     }
+    #open-rules{
+        opacity: 30%;
+    }
+
   }
