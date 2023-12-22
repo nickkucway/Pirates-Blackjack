@@ -25,7 +25,6 @@ Pirate blackjack is a simplified version of blackjack.
 </details>
 
   ## :computer: Technologies Used
-  A screenshot of your app's landing page and any other screenshots of interest.
 
   ![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
   ![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)
