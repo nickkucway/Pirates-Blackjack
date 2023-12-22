@@ -2,7 +2,7 @@
 
 # :pirate_flag:	 Pirate's Blackjack :pirate_flag:	
 
-## [Play here](https://nickkucway.github.io/cardgame/index.html)
+## [Play here](https://nickkucway.github.io/Pirates-Blackjack/)
 
 ### :memo:Description:memo:
 
